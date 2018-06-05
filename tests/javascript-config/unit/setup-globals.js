@@ -24,7 +24,6 @@ global.wp = {
 	'utils',
 	'blocks',
 	'editor',
-	'data',
 	'core-data',
 	'edit-post',
 	'viewport',
@@ -39,8 +38,16 @@ global.wp = {
 [
 	'element',
 	'date',
+	'data',
+	'a11y',
+	'autop',
+	'blob',
+	'deprecated',
+	'dom',
+	'hooks',
+	'i18n',
 ].forEach( entryPointName => {
 	Object.defineProperty( global.wp, entryPointName, {
-		get: () => require( 'gutenberg/packages/' + entryPointName + '/src' ),
+		get: () => require( '@wordpress' + entryPointName + '/src' ),
 	} );
 } );
